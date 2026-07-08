@@ -1,0 +1,98 @@
+:root {
+  --bg: #1b1d23;
+  --panel: #24262e;
+  --display: #14151a;
+  --text: #f2f0ea;
+  --muted: #8b8d97;
+  --accent: #ff8a3d;
+  --op: #33363f;
+  --op-hover: #40434e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  font-family: 'Courier New', monospace;
+}
+
+.calculator {
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 24px;
+  width: 320px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.display {
+  background: var(--display);
+  border-radius: 12px;
+  padding: 24px 18px 16px;
+  margin-bottom: 18px;
+  text-align: right;
+  overflow: hidden;
+}
+
+.display .history {
+  color: var(--muted);
+  font-size: 0.9rem;
+  min-height: 1.2em;
+  letter-spacing: 0.5px;
+}
+
+.display .current {
+  color: var(--text);
+  font-size: 2.4rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  word-wrap: break-word;
+  margin-top: 4px;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 18px 0;
+  font-size: 1.1rem;
+  font-family: inherit;
+  cursor: pointer;
+  background: var(--op);
+  color: var(--text);
+  transition: transform 0.05s ease, background 0.15s ease;
+}
+
+button:hover { background: var(--op-hover); }
+button:active { transform: scale(0.95); }
+
+button.operator {
+  background: var(--accent);
+  color: #1b1d23;
+  font-weight: bold;
+}
+
+button.operator:hover { background: #ff9c5c; }
+
+button.function {
+  color: var(--accent);
+}
+
+button.zero { grid-column: span 2; }
+
+button.equals {
+  background: var(--accent);
+  color: #1b1d23;
+  font-weight: bold;
+  grid-row: span 2;
+  height: 100%;
+}
